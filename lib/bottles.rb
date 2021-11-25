@@ -31,4 +31,13 @@ class Bottles
     next_steps +
     "#{how_many_bottles_left} bottle#{bottles_left_plural} of beer on the wall.\n"
   end
+
+  def verses(start_num_of_bottles, end_num_of_bottles)
+    verses = ""
+    start_num_of_bottles.downto(end_num_of_bottles) do |n|
+      verses << Bottles.new.verse(n)
+      verses << "\n" if n != end_num_of_bottles
+    end
+    verses
+  end
 end
