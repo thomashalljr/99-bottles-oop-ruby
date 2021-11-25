@@ -40,4 +40,8 @@ class Bottles
     end
     verses
   end
+
+  def song
+    Bottles.new.verses(99, 0)
+  end
 end
