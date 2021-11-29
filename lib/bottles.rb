@@ -8,12 +8,12 @@ class Bottles
     bottles_left_plural = ""
     bottles_left_plural = "s" if bottles_left != 1
 
-    if num_of_bottles == 0
-      how_many_bottles = "no more"
-      next_steps = "Go to the store and buy some more, "
-    else
+    if num_of_bottles > 0
       how_many_bottles = num_of_bottles.to_s
       next_steps = "Take #{num_of_bottles > 1 ? "one" : "it"} down and pass it around, "
+    else
+      how_many_bottles = "no more"
+      next_steps = "Go to the store and buy some more, "
     end
 
     how_many_bottles_left =
