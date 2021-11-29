@@ -13,7 +13,7 @@ class Bottles
       next_steps = "Go to the store and buy some more, "
     else
       how_many_bottles = num_of_bottles.to_s
-      next_steps = "Take #{bottles_left == 0 ? "it" : "one"} down and pass it around, "
+      next_steps = "Take #{num_of_bottles > 1 ? "one" : "it"} down and pass it around, "
     end
 
     how_many_bottles_left =
