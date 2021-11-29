@@ -33,12 +33,7 @@ class Bottles
   end
 
   def verses(start_num_of_bottles, end_num_of_bottles)
-    verses = ""
-    start_num_of_bottles.downto(end_num_of_bottles) do |n|
-      verses << verse(n)
-      verses << "\n" if n != end_num_of_bottles
-    end
-    verses
+    start_num_of_bottles.downto(end_num_of_bottles).map {|n| verse(n) }.join("\n")
   end
 
   def song
