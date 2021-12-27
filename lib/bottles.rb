@@ -1,35 +1,22 @@
 class Bottles
   def verse(num_of_bottles)
-    bottles_left = num_of_bottles - 1
-
-    bottles_plural = ""
-    bottles_plural = "s" if num_of_bottles != 1
-
-    bottles_left_plural = ""
-    bottles_left_plural = "s" if bottles_left != 1
-
-    if num_of_bottles > 0
-      how_many_bottles = num_of_bottles.to_s
-      next_steps = "Take #{num_of_bottles > 1 ? "one" : "it"} down and pass it around, "
-    else
-      how_many_bottles = "no more"
-      next_steps = "Go to the store and buy some more, "
-    end
-
-    how_many_bottles_left =
-    case bottles_left
+    case num_of_bottles
     when 0
-      "no more"
-    when -Float::INFINITY..-1
-      "99"
+      "No more bottles of beer on the wall, " +
+      "no more bottles of beer.\n" +
+      "Go to the store and buy some more, " +
+      "99 bottles of beer on the wall.\n"
+    when 1
+      "#{num_of_bottles} bottle of beer on the wall, " +
+      "#{num_of_bottles} bottle of beer.\n" +
+      "Take it down and pass it around, " +
+      "no more bottles of beer on the wall.\n"
     else
-      bottles_left
+      "#{num_of_bottles} bottles of beer on the wall, " +
+      "#{num_of_bottles} bottles of beer.\n" +
+      "Take one down and pass it around, " +
+      "#{num_of_bottles - 1} bottle#{"s" if num_of_bottles - 1 != 1} of beer on the wall.\n"
     end
-
-    "#{how_many_bottles.capitalize} bottle#{bottles_plural} of beer on the wall, " +
-    "#{how_many_bottles} bottle#{bottles_plural} of beer.\n" +
-    next_steps +
-    "#{how_many_bottles_left} bottle#{bottles_left_plural} of beer on the wall.\n"
   end
 
   def verses(start_num_of_bottles, end_num_of_bottles)
